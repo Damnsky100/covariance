@@ -2,13 +2,16 @@ import numpy as np
 import pandas as pd
 import statistics
 
-
-A =[22,24,21,27,34]
+#On définit le rendement de chaque asset class
+A =[22,24,21,27,34] 
 B =[24,21,20,7,26]
 
+#Formule pour trouver la moyenne de notre série de rendement
 def average(lst):
     return sum(lst) / len(lst)
 
+
+#Formule pour transformer nos datas en série de rendement
 def pct(lst):
     pct_list = []
     for observation in range(len(lst)):
@@ -17,6 +20,7 @@ def pct(lst):
     return pct_list
 
 
+#Infliger à nos asset class les formules déjà développé dans un df
 def matrix2(): #Matrice de rendement - moyenne de chaque asset
     mat = pd.DataFrame(data = {'assetA': A, 'assetB': B})
     temp2=[]
@@ -30,8 +34,8 @@ def matrix2(): #Matrice de rendement - moyenne de chaque asset
 
     return mat2
 
-
-def cov(): # we get the covariance between the two assets
+# we get the covariance between the two assets
+def cov(): 
         
     matrice_res = matrix2() #Verify our array
     matrice_inv = pd.DataFrame()
